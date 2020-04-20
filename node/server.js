@@ -4,6 +4,14 @@
 
 const express = require('express')
 const app = express();
+
+require('./db')
+
+
+//สั่งให้ server เปิด db
+// mongoose ใช้ Robo3T
+// Nodejs ใช้ Postman
+
 const bodyParser = require('body-parser')
 
 //แปลง JSON File ใข้ BosyParser
