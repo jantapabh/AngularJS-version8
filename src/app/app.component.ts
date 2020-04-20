@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -19,15 +20,22 @@ export class AppComponent implements OnInit{
 
   }
 
+
+  onSubmit(data){
+
+   
+    alert(JSON.stringify(data));
+    this.http.post<any>('http://localhost:3000/api', data).subscribe(result => {
+   
+    })
+    
+  }
+
   //เป็นการยิงข้อมูลไปยังฝั่งแสดงผลบน server โดยกำหนดให้ยิงไปที่ สนแฟส้นหะ ที่กำหนดได้
 
   ngOnInit(): void {
 
-    let data = { username: "lek", feedback: "I love it"};
-
-    this.http.post<any>('http://localhost:3000/api', data).subscribe(result => {
-      alert(JSON.stringify(result));
-    })
+   
  
   }
 
