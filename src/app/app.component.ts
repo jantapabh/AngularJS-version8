@@ -19,6 +19,8 @@ export class AppComponent implements OnInit{
 
   }
 
+  //เป็นการยิงข้อมูลไปยังฝั่งแสดงผลบน server โดยกำหนดให้ยิงไปที่ สนแฟส้นหะ ที่กำหนดได้
+
   ngOnInit(): void {
 
     let data = { username: "lek", feedback: "I love it"};

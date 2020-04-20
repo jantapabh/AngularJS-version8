@@ -10,6 +10,18 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
+//Allow client to access cross domain or ip-address
+//ส่วนนี้จะอนุญาติให้สามารถเข้าถึงทุกอัน
+
+app.use(function(req, res, next){
+
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Acess-Control-Allow-Methods', 'GET , POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'content-type, x-access-token');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next()
+;
+});
 
 app.get('/', (req, res) => {
     res.send('Hello');
@@ -26,7 +38,7 @@ app.post('/api', (req, res) => {
     const username = req.body.username;
     //req.body.feedBAck คือการใช้ BodyParser ในการอ่าน request ที่เข้ามาและทำการแปลง
 
-    res.end("Feedback : " + feedback);
+    res.json({result: "Success", username: username, feedback: feedback});
 
 });
 
