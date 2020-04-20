@@ -6,6 +6,7 @@ const express = require('express')
 const app = express();
 
 require('./db')
+const FeedbackModel = require('./feedback_schema');
 
 
 //สั่งให้ server เปิด db
@@ -44,9 +45,18 @@ app.post('/api', (req, res) => {
 
     const feedback = req.body.feedback;
     const username = req.body.username;
+
+    FeedbackModel.create(req.body, (err, doc) => {
+
+        if(err) 
+        res.json({ result: "failed", username: username, feedback: feedback});
+
+        res.json({result: "Success", username: username, feedback: feedback});
+
+    });
     //req.body.feedBAck คือการใช้ BodyParser ในการอ่าน request ที่เข้ามาและทำการแปลง
 
-    res.json({result: "Success", username: username, feedback: feedback});
+    // res.json({result: "Success", username: username, feedback: feedback});
 
 });
 
