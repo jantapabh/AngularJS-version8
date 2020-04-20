@@ -23,6 +23,7 @@ app.get('/home', (req, res) => {
 app.post('/api', (req, res) => {
 
     const feedback = req.body.feedback;
+    const username = req.body.username;
     //req.body.feedBAck คือการใช้ BodyParser ในการอ่าน request ที่เข้ามาและทำการแปลง
 
     res.end("Feedback : " + feedback);
