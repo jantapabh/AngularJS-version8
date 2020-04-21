@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 
 
