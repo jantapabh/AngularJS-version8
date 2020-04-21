@@ -30,9 +30,17 @@ export class AppComponent implements OnInit{
     })
   }
 
+  getFeedback(){
+    this.http.get('http://localhost:3000/api').subscribe(result => {
+      alert(JSON.stringify(result));
+    });
+  }
+
   //เป็นการยิงข้อมูลไปยังฝั่งแสดงผลบน server โดยกำหนดให้ยิงไปที่ สนแฟส้นหะ ที่กำหนดได้
 
   ngOnInit(): void {
+
+    this.getFeedback();
 
   }
 
