@@ -1,4 +1,5 @@
 //ส่วนอธิบายโค้ดเพิ่มเติม
+// AngularJS version 9 
 
 - ส่วนแก้ไขหบักคือ app.component.ts
 กับ app.component.html -> ส่วนเขียนโค้ดและหากต้อวการติดตั้ง module จะติดตั้งใน app.module.ts
