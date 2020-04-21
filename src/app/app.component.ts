@@ -8,7 +8,12 @@ import { CoronaVirusService } from './corona-virus.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'my-app';
+
+  casses: number;
+  deaths: number;
+  recover: number;
+  active: number;
+  countries: number;
 
   constructor(private cvs: CoronaVirusService) {
 
@@ -16,8 +21,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cvs.getData();
+    this.cvs.getData().subscribe(datas => {
 
+      console.log(datas);
+
+      this.casses = datas.stats[0];
+      this.deaths = datas.stats[1];
+      this.recover = datas.stats[2];
+      this.active = datas.stats[3];
+      this.countries= datas.stats[4];
+      
+    });
   }
 }
 
