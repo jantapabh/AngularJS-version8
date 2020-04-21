@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
 
 
   title = 'JANTAPA';
+  mDattaArray:any[] = []
 
   constructor(private http:HttpClient) {
 
@@ -31,8 +32,9 @@ export class AppComponent implements OnInit{
   }
 
   getFeedback(){
-    this.http.get('http://localhost:3000/api').subscribe(result => {
-      alert(JSON.stringify(result));
+    this.http.get<any>('http://localhost:3000/api').subscribe(result => {
+      //alert(JSON.stringify(result));
+      this.mDattaArray = result.data;
     });
   }
 
