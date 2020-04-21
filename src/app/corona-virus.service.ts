@@ -16,9 +16,11 @@ export class CoronaVirusService {
 
   constructor(private http: HttpClient) {
 
-   }
+  }
 
-   getData(){
-     this.http.get(environment.apiUrl, this.options);
-   }
+  getData() {
+    this.http.get(environment.apiUrl, this.options).subscribe((datas: any) => {
+      console.log(datas);
+    });
+  }
 }
