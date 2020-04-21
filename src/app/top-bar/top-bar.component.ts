@@ -1,8 +1,8 @@
-import { Component, OnInit ,NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-    selector: 'top-bar-component',
+    selector: 'app-top-bar',
     templateUrl: './top-bar.component.html',
     styleUrls: ['./top-bar.component.css']
 })
