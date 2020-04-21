@@ -54,11 +54,25 @@ app.post('/api', (req, res) => {
         res.json({result: "Success", username: username, feedback: feedback});
 
     });
-    //req.body.feedBAck คือการใช้ BodyParser ในการอ่าน request ที่เข้ามาและทำการแปลง
-
-    // res.json({result: "Success", username: username, feedback: feedback});
 
 });
+
+app.get('/api', (req, res)=> {
+
+    FeedbackModel.find((err, doc) => {
+
+        if(err)
+         res.json({ result: "Failed"})
+
+         res.json({result: "Success",  data: doc})
+        
+        })
+
+});
+
+
+
+
 
 app.listen(3000, () => {
 
