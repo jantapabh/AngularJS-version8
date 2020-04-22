@@ -28,8 +28,6 @@ export class CoronaVirusService {
       const stats = datas.affected_countries;
       const update_time = datas.statistic_taken_at;
 
-  
-
       let totalCasees = 0;
       let totalDeaths = 0;
       let totalRecover = 0;
